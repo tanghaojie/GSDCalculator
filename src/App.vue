@@ -104,8 +104,8 @@
               >
                 {{ aspectRatio.name }}
               </a-select-option>
-            </a-select></a-col
-          >
+            </a-select>
+          </a-col>
         </a-row>
 
         <a-row style="margin-top: 1rem;">
@@ -153,6 +153,7 @@
 </template>
 
 <script>
+import { Button, Row, Col, Slider, InputNumber, Select } from 'ant-design-vue'
 export default {
   name: 'App',
   data() {
@@ -257,7 +258,16 @@ export default {
       ]
     }
   },
-  components: {},
+  components: {
+    AButton: Button,
+    ARow: Row,
+    ACol: Col,
+    ASlider: Slider,
+    AInputNumber: InputNumber,
+    ASelect: Select,
+    ASelectOption: Select.Option,
+    ASelectOptGroup: Select.OptGroup
+  },
   computed: {
     gsd() {
       if (
