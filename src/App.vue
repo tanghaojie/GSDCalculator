@@ -72,13 +72,12 @@
             ><label style="height: 36px; line-height: 36px;">焦距</label></a-col
           >
 
-          <a-col :span="6">
-            <a-input-number v-model="focalLength" />
+          <a-col :span="18">
+            <a-input-number v-model="focalLength" /><label
+              style="height: 36px; line-height: 36px;"
+              >mm</label
+            >
           </a-col>
-
-          <a-col :span="6" class="" style="margin-left: 10px"
-            ><label style="height: 36px; line-height: 36px;">mm</label></a-col
-          >
 
           <!-- <a-col
             :span="6"
@@ -110,7 +109,7 @@
           >
             <label style="height: 36px; line-height: 36px;">航高(m)</label>
           </a-col>
-          <a-col :span="12" style="padding-right: 30px;">
+          <a-col :span="12" style="padding-right: 30px; margin-top: 16px">
             <a-slider v-model="flyingHeight" :min="1" :max="1000" />
           </a-col>
           <a-col :span="6">
@@ -315,6 +314,18 @@ export default {
 </script>
 
 <style>
+.jt-gsd-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff url('./assets/r.jpg') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+</style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
@@ -327,14 +338,6 @@ export default {
   color: #000;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff url('./assets/r.jpg') no-repeat center;
-  background-size: cover;
-}
-
 .title {
   font-size: 1.8rem;
   text-align: center;
@@ -345,6 +348,7 @@ body {
   height: 100%;
   display: flex;
   position: relative;
+  z-index: 1;
 }
 
 #app::before {
