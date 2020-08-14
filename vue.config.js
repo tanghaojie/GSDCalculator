@@ -15,25 +15,25 @@ module.exports = {
       config.plugins.push(new BundleAnalyzerPlugin())
       config.plugins.push(new AntdDayjsWebpackPlugin())
 
-      config.optimization = {
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          maxInitialRequests: Infinity,
-          minSize: 20000,
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name(module) {
-                const packageName = module.context.match(
-                  /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-                )[1]
-                return `npm.${packageName.replace('@', '')}`
-              }
-            }
-          }
-        }
-      }
+      // config.optimization = {
+      //   runtimeChunk: 'single',
+      //   splitChunks: {
+      //     chunks: 'all',
+      //     maxInitialRequests: Infinity,
+      //     minSize: 20000,
+      //     cacheGroups: {
+      //       vendor: {
+      //         test: /[\\/]node_modules[\\/]/,
+      //         name(module) {
+      //           const packageName = module.context.match(
+      //             /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+      //           )[1]
+      //           return `npm.${packageName.replace('@', '')}`
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
 
       config.resolve = {
         alias: {
@@ -44,7 +44,6 @@ module.exports = {
         }
       }
     }
-    // plugins: [new Webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)]
   },
   pluginOptions: {}
 }
