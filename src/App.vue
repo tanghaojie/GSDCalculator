@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1 style="font-size: 1.8rem; text-align: center;">
+      <h1 class="title">
         地面采样距离(GSD)计算器
       </h1>
 
@@ -27,20 +27,16 @@
         <h1 style="font-size: 1.4rem;">相机参数</h1>
 
         <div class="sensor">
-          <h1 style="font-size: 1rem;">传感器</h1>
+          <h1 style="font-size: 1rem;">传感器尺寸(mm)</h1>
           <a-row>
             <a-col :span="6" class="label-after" style="text-align: end;"
-              ><label style="height: 36px; line-height: 36px;"
-                >宽度(mm)</label
-              ></a-col
+              ><label style="height: 36px; line-height: 36px;">宽</label></a-col
             >
             <a-col :span="6">
               <a-input-number v-model="camera.sensor.width"
             /></a-col>
             <a-col :span="6" class="label-after" style="text-align: end;"
-              ><label style="height: 36px; line-height: 36px;"
-                >高度(mm)</label
-              ></a-col
+              ><label style="height: 36px; line-height: 36px;">高</label></a-col
             >
             <a-col :span="6">
               <a-input-number v-model="camera.sensor.height"
@@ -52,18 +48,14 @@
           <h1 style="font-size: 1rem;">分辨率</h1>
           <a-row>
             <a-col :span="6" class="label-after" style="text-align: end;"
-              ><label style="height: 36px; line-height: 36px;"
-                >宽度(个)</label
-              ></a-col
+              ><label style="height: 36px; line-height: 36px;">宽</label></a-col
             >
             <a-col :span="6">
               <a-input-number v-model="camera.resolution.width"
             /></a-col>
 
             <a-col :span="6" class="label-after" style="text-align: end;"
-              ><label style="height: 36px; line-height: 36px;"
-                >高度(个)</label
-              ></a-col
+              ><label style="height: 36px; line-height: 36px;">高</label></a-col
             >
             <a-col :span="6">
               <a-input-number v-model="camera.resolution.height"
@@ -77,16 +69,18 @@
 
         <a-row>
           <a-col :span="6" class="label-after" style="text-align: end;"
-            ><label style="height: 36px; line-height: 36px;"
-              >焦距(mm)</label
-            ></a-col
+            ><label style="height: 36px; line-height: 36px;">焦距</label></a-col
           >
 
           <a-col :span="6">
             <a-input-number v-model="focalLength" />
           </a-col>
 
-          <a-col
+          <a-col :span="6" class="" style="margin-left: 10px"
+            ><label style="height: 36px; line-height: 36px;">mm</label></a-col
+          >
+
+          <!-- <a-col
             :span="6"
             class="label-after"
             style="text-align: end; display: none;"
@@ -105,7 +99,7 @@
                 {{ aspectRatio.name }}
               </a-select-option>
             </a-select>
-          </a-col>
+          </a-col> -->
         </a-row>
 
         <a-row style="margin-top: 1rem;">
@@ -341,6 +335,11 @@ body {
   background-size: cover;
 }
 
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
 #app {
   width: 960px;
   height: 100%;
@@ -420,6 +419,12 @@ body {
   .result-value {
     font-size: 1.1rem;
     font-weight: bold;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.4rem;
+    text-align: center;
   }
 }
 </style>
