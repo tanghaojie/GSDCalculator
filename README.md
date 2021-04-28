@@ -1,5 +1,7 @@
 # gsd_calculator
 
+![](https://github.com/tanghaojie/GSDCalculator/blob/master/screenshot.jpg)
+
 ## Project setup
 ```
 npm install
@@ -19,6 +21,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
